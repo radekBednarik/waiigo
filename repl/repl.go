@@ -28,6 +28,7 @@ func Start(in io.Reader, out io.Writer) {
 		if line == EXIT {
 			os.Exit(0)
 		}
+
 		l := lexer.New(line)
 
 		for tok := l.NextToken(); tok.Type != token.EOF; tok = l.NextToken() {
